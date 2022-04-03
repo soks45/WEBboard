@@ -1,8 +1,4 @@
 <?php
-  require __DIR__ . 'vendor/autoload.php';
-  use Dotenv/Dotenv;
-  if (file_exists(__DIR__."/.env"))
-  {
-    $dotenv = Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
-  }
+    date_default_timezone_set('Asia/Yekaterinburg');
+    require "consolelog.php";
+    require "dbconnect.php";
