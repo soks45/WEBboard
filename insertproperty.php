@@ -17,16 +17,12 @@
             $stmt->execute();
 
 
-            $_SESSION['msg'] = "Категория добавлена.";
+            $_SESSION['msg'] = "Объект недвижимости добавлен.";
 
         } catch (PDOException $error) {
             console_log($error->getMessage());
             $_SESSION['msg'] = "Ошибка: " . $error->getMessage();
         }
     }
-    else
-    {
-        $_SESSION['msg'] = "Ошибка: Имя категории должно содержать не менее 3х символов.";
-    }
-    header('Location:http://webboard');
+    header('Location:http://webboard/index.php?page=property');
     exit();
