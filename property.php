@@ -1,5 +1,5 @@
 <h1>Таблица объектов недвижимости</h1>
-<table border="1">
+<table class="table table-striped" style="width: 70%; margin: 0 auto;">
     <tr>
         <th>property_id</th>
         <th>user_id</th>
@@ -27,26 +27,47 @@
     ?>
 </table>
 
-<h1>Добавить объект аренды</h1>
-<form method="get" action="insertproperty.php">
-    <select name="user_id">
-        <?php
-            $result = $conn->query("SELECT * FROM user");
-            while($row = $result->fetch())
-            {
-                echo '<option value="'.$row['user_id'].'">'.$row['first_name']. " ".$row['second_name'].'</option>';
-            }
-        ?>
-    </select>
-    <input type="text" name="type" placeholder="type">
-    <input type="text" name="name" placeholder="name">
-    <input type="number" name="area" placeholder="area">
-    <input type="text" name="address" placeholder="address">
-    <input type="number" name="price" placeholder="price">
-    <input type="text" name="description" placeholder="description">
-    <input type="number" name="rooms" placeholder="rooms">
-    <input type="submit" value="Добавить">
-</form>
+<div style="width: 30%; margin: 0 auto;">
+    <h1 style="text-align: center;">Добавить объект аренды</h1>
+    <form method="get" action="insertproperty.php">
+        <div class="mb-3">
+            <select name="user_id" class="form-select">
+                <?php
+                $result = $conn->query("SELECT * FROM user");
+                while($row = $result->fetch())
+                {
+                    echo '<option value="'.$row['user_id'].'">'.$row['first_name']. " ".$row['second_name'].'</option>';
+                }
+                ?>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input type="text" name="type" placeholder="type" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="name" placeholder="name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="area" placeholder="area" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="address" placeholder="address" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="price" placeholder="price" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="description" placeholder="description" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="rooms" placeholder="rooms" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Добавить" class="btn btn-primary" class="form-control">
+        </div>
+    </form>
+</div>
+
 
 
 

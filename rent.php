@@ -1,5 +1,5 @@
 <h1>Таблица объектов аренды</h1>
-<table border="1">
+<table class="table table-striped" style="width: 70%; margin: 0 auto;">
     <tr>
         <th>rent_id</th>
         <th>user_id</th>

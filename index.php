@@ -12,3 +12,4 @@
                 require "rent.php";
                 break;
         }
+    require "footer.php";
