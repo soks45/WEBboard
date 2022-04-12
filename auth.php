@@ -18,6 +18,7 @@
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['second_name'] = $row['second_name'];
                 $_SESSION['user_id'] = $row['user_id'];
+                $_SESSION['user_id'] = $row['is_admin'];
                 //if ($row['is_teacher']==1) $_SESSION['teacher'] = true;
                 $msg =  "Вы успешно вошли в систему";
             }

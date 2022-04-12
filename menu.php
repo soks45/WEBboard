@@ -28,7 +28,7 @@
                             {
                                 echo '<form class="d-flex" method="post">';
                                 echo '<input class="form-control me-2" type="text" placeholder="Логин" name="login" aria-label="Логин"/>';
-                                echo '<input class="form-control me-2" type="text" placeholder="Пароль" name="password" aria-label="Пароль"/>';
+                                echo '<input class="form-control me-2" type="password" placeholder="Пароль" name="password" aria-label="Пароль"/>';
                                 echo '<button class="btn btn-outline-success" type="submit">Войти</button>';
                                 echo '</form>';
                             }
