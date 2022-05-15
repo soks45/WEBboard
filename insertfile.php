@@ -16,16 +16,16 @@
 
     try {
         require 'deletefile.php';
-        $sql = 'INSERT INTO file(user_id, path) VALUES(:user_id, :picture_url)';
+        $sql = 'UPDATE user SET path=:picture_url WHERE user_id='.$_SESSION['user_id'];
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':user_id', $_SESSION['user_id']);
         $stmt->bindValue(':picture_url', $picture_url);
         $stmt->execute();
         $_SESSION['msg'] = "Файл успешно добавлен";
+        $_SESSION['path'] = $picture_url;
     } catch (PDOexception $error) {
         $_SESSION['msg'] = "Ошибка добавления фото: " . $error->getMessage();
     }
     echo $_SESSION['msg'];
-    // перенаправление на главную страницу приложения
-    header('Location:http://webboard/index.php');
+
+    header('Location:http://webboard/index.php?page=avatar');
     exit();

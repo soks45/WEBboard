@@ -9,9 +9,10 @@
             $_SESSION['msg'] = $e->getMessage();
         }
         if ($result->rowCount() == 0) throw new PDOException('Файл не найден');
-        $sql = 'DELETE FROM file WHERE user_id=:id';
+        $sql = 'UPDATE user SET path=:id WHERE user_id=:id';
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':id', $_SESSION['user_id']);
+        $stmt->bindValue(':id', '');
         $stmt->execute();
         $_SESSION['msg'] = "Файл успешно удален";
     } catch (PDOexception $error) {

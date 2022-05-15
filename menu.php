@@ -3,7 +3,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta charset="utf-8">
 </head>
-<body style="padding: 70px 0 70px">
+<body style="padding: 70px 0 70px;">
     <header class="container">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="http://webboard/index.php">Главная</a>
+                            <a class="nav-link" aria-current="page" href="http://webboard/index.php?page=board">Главная</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=property">Недвижимость</a>
@@ -34,16 +34,13 @@
                                 echo '</form>';
                             }
                             else {
-                                $result = $conn->query("SELECT * FROM file WHERE user_id=".$_SESSION['user_id']);
-                                $row = $result->fetch();
-                                console_log($row);
-                                if ($row['path'] === '') {
-                                    $row['path'] = 'https://cdn-icons-png.flaticon.com/128/456/456212.png';
+                                if ($_SESSION['path'] === '') {
+                                    $_SESSION['path'] = 'https://cdn-icons-png.flaticon.com/128/456/456212.png';
                                 }
                                 echo '<a class="nav-link" style="color: aliceblue;">Привет, ' . $_SESSION['first_name'] . ' ' . $_SESSION['second_name'] .
-                                    '</a><a href="http://webboard/index.php?page=avatar"><img style="width: 50px; height: 50px; vertical-align: middle; border-radius: 50%" 
-                                    src="'.$row['path'].'"</a></a>';
-                                echo '<a class="btn btn-outline-success my-2 my-sm-0" href="index.php?logout=1">Выйти</a>';
+                                    '</a><a href="http://webboard/index.php?page=avatar"><img style="width: 50px; height: 50px; border-radius: 50%" 
+                                    src="'.$_SESSION['path'].'"</a></a>';
+                                echo '<a style="margin-left: 2vh" class="btn btn-outline-success my-2 my-sm-0" href="index.php?logout=1">Выйти</a>';
                             }
                         ?>
                 </div>

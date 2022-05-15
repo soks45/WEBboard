@@ -2,7 +2,7 @@
     if (isset($_POST["login"]) and $_POST["login"]!='')
     {
         try {
-            $sql = 'SELECT user_id, first_name, second_name	, md5password, login, is_admin FROM user WHERE login=(:login)';
+            $sql = 'SELECT user_id, first_name, second_name, md5password, login, is_admin, path FROM user WHERE login=(:login)';
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(':login', $_POST['login']);
             $stmt->execute();
@@ -18,8 +18,8 @@
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['second_name'] = $row['second_name'];
                 $_SESSION['user_id'] = $row['user_id'];
-                $_SESSION['user_id'] = $row['is_admin'];
-                //if ($row['is_teacher']==1) $_SESSION['teacher'] = true;
+                $_SESSION['is_admin'] = $row['is_admin'];
+                $_SESSION['path'] = $row['path'];
                 $msg =  "Вы успешно вошли в систему";
             }
         }

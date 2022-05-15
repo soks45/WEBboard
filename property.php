@@ -1,5 +1,5 @@
-<h1>Таблица объектов недвижимости</h1>
-<table class="table table-striped" style="width: 70%; margin: 0 auto;">
+<h1 style="text-align: center; margin: 2vh auto 0;">Недвижимость</h1>
+<table class="table table-striped" style="width: 70%; margin: 2vh auto 0;">
     <tr>
         <th>Тип недвижимости</th>
         <th>Название</th>
@@ -10,6 +10,7 @@
         <th>Описание</th>
         <th>Количество комнат</th>
         <th>Владелец недвижимости</th>
+        <th></th>
     </tr>
     <?php
         $result = $conn->query("SELECT * FROM property JOIN user ON (property.user_id = user.user_id)");
@@ -29,9 +30,9 @@
     ?>
 </table>
 
-<div style="width: 30%; margin: 0 auto;">
-    <h1 style="text-align: center;">Добавить объект аренды</h1>
-    <form method="get" action="insertproperty.php">
+<div style="width: 30%; margin: 5vh auto 0;">
+    <h1 style="text-align: center;">Добавить недвижимость</h1>
+    <form method="post" action="insertproperty.php" enctype="multipart/form-data">
         <div class="mb-3">
             <select name="user_id" class="form-select">
                 <?php
@@ -64,8 +65,9 @@
         <div class="mb-3">
             <input type="number" name="rooms" placeholder="rooms" class="form-control">
         </div>
-        <div class="mb-3">
-            <input type="submit" value="Добавить" class="btn btn-primary" class="form-control">
+        <div mb-3 style="display: flex; justify-content: space-between">
+            <input type="file" class="mb-1" name="filename">
+            <input type="submit" value="Добавить" class="btn btn-secondary" class="form-control">
         </div>
     </form>
 </div>
