@@ -14,7 +14,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="http://webboard/index.php?page=board">Главная</a>
+                            <a class="nav-link" aria-current="page" href="index.php?page=board">Главная</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php?page=property">Недвижимость</a>
@@ -38,7 +38,7 @@
                                     $_SESSION['path'] = 'https://cdn-icons-png.flaticon.com/128/456/456212.png';
                                 }
                                 echo '<a class="nav-link" style="color: aliceblue;">Привет, ' . $_SESSION['first_name'] . ' ' . $_SESSION['second_name'] .
-                                    '</a><a href="http://webboard/index.php?page=avatar"><img style="width: 50px; height: 50px; border-radius: 50%" 
+                                    '</a><a href="index.php?page=avatar"><img style="width: 50px; height: 50px; border-radius: 50%" 
                                     src="'.$_SESSION['path'].'"</a></a>';
                                 echo '<a style="margin-left: 2vh" class="btn btn-outline-success my-2 my-sm-0" href="index.php?logout=1">Выйти</a>';
                             }
