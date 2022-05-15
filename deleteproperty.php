@@ -11,5 +11,5 @@
     } catch (PDOException $error) {
         $_SESSION['msg'] = "Ошибка: " . $error->getMessage();
     }
-    header('Location:http://webboard/index.php?page=property');
+    header("Location: ".$_SERVER['HTTP_REFERER']);
     exit();

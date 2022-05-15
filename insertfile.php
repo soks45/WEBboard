@@ -27,5 +27,5 @@
     }
     echo $_SESSION['msg'];
 
-    header('Location:http://webboard/index.php?page=avatar');
+    header("Location: ".$_SERVER['HTTP_REFERER']);
     exit();
