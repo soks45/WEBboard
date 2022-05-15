@@ -1,5 +1,6 @@
 <?php
     date_default_timezone_set('Asia/Yekaterinburg');
+    require 'consolelog.php';
     require "dbconnect.php";
     require "auth.php";
     require "menu.php";
@@ -10,6 +11,12 @@
                 break;
             case 'rent':
                 require "rent.php";
+                break;
+            case 'photos':
+                require 'photos.php';
+                break;
+            case 'avatar':
+                require 'avatarSelector.php';
                 break;
         }
     require "footer.php";

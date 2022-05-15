@@ -1,5 +1,4 @@
 <?php
-    require "consolelog.php";
     session_start();
     require __DIR__ . '/vendor/autoload.php';
 
@@ -14,10 +13,8 @@
         $conn = new PDO("mysql:host=$_ENV[servername];dbname=$_ENV[database]", $_ENV['username'], $_ENV['password']);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $dbconnect='connected';
-        console_log($dbconnect);
     } catch (PDOException $e) {
         $dbconnect='failed';
-        console_log($dbconnect);
         die();
     }
 
