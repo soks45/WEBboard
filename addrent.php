@@ -7,7 +7,6 @@
 //            echo '<img src="'.$row['path'].'" alt="No image" style="max-width: 300px; max-height: 300px;">';
 //        }
 //    ?>
-    <img src="" alt="">
     <h1 style="text-align: center;">Арендовать</h1>
     <form method="get" action="insertrent.php">
         <div class="mb-3">
