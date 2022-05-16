@@ -1,12 +1,12 @@
 <div style="width: 30%; margin: 5vh auto 0;">
-    <?php
-        $sql = "SELECT * FROM property WHERE property_id=".$_SESSION['property_id'];
-        $result = $conn->query($sql);
-        while($row = $result->fetch())
-        {
-            echo '<img src="'.$row['path'].'" alt="No image" style="max-width: 300px; max-height: 300px;">';
-        }
-    ?>
+<!--    --><?php
+//        $sql = "SELECT * FROM property WHERE property_id=".$_SESSION['property_id'];
+//        $result = $conn->query($sql);
+//        while($row = $result->fetch())
+//        {
+//            echo '<img src="'.$row['path'].'" alt="No image" style="max-width: 300px; max-height: 300px;">';
+//        }
+//    ?>
     <img src="" alt="">
     <h1 style="text-align: center;">Арендовать</h1>
     <form method="get" action="insertrent.php">
