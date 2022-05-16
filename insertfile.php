@@ -9,24 +9,23 @@
         $resource = Container::getFileUploader()->store($file, $filename);
         $picture_url = $resource['ObjectURL'];
         echo $picture_url;
-        try {
-            require 'deletefile.php';
-            $sql = 'UPDATE user SET path=:picture_url WHERE user_id='.$_SESSION['user_id'];
-            $stmt = $conn->prepare($sql);
-            $stmt->bindValue(':picture_url', $picture_url);
-            $stmt->execute();
-            $_SESSION['msg'] = "Файл успешно добавлен";
-            $_SESSION['path'] = $picture_url;
-        } catch (PDOexception $error) {
-            $_SESSION['msg'] = "Ошибка добавления фото: " . $error->getMessage();
-        }
-        echo $_SESSION['msg'];
     }
     else {
         echo "No photo";
     }
 
-
+    try {
+        require 'deletefile.php';
+        $sql = 'UPDATE user SET path=:picture_url WHERE user_id='.$_SESSION['user_id'];
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':picture_url', $picture_url);
+        $stmt->execute();
+        $_SESSION['msg'] = "Файл успешно добавлен";
+        $_SESSION['path'] = $picture_url;
+    } catch (PDOexception $error) {
+        $_SESSION['msg'] = "Ошибка добавления фото: " . $error->getMessage();
+    }
+    echo $_SESSION['msg'];
 
     header("Location: ".$_SERVER['HTTP_REFERER']);
     exit();
