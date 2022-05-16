@@ -4,7 +4,7 @@
         $result = $conn->query($sql);
         while($row = $result->fetch())
         {
-            echo '<img src="'.$row['path_p'].'" alt="No image" style="width: max-content; height: max-content; max-height: 300px; margin: 0 auto">';
+            echo '<img src="'.$row['path_p'].'" alt="No image" style="width: max-content; height: max-content; max-height: 300px; margin-left: 7vh">';
         }
     ?>
     <h1 style="text-align: center;">Арендовать</h1>
