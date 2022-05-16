@@ -12,12 +12,13 @@
         if ($property_image === '') {
             $property_image = 'https://avatars.mds.yandex.net/get-yablogs/38241/file_1556638122894/orig';
         }
-        echo '
+        echo '  
                 <div style="width: 90%; background-color: blanchedalmond; margin: 2vh auto; border-radius: 30px; border: 1px solid black;
                                         display: flex; justify-content: space-between; padding: 25px 35px 25px 35px; align-items: flex-start; 
                                         -webkit-box-shadow: -11px -9px 5px -10px rgba(34, 60, 80, 0.6) inset;
                                         -moz-box-shadow: -11px -9px 5px -10px rgba(34, 60, 80, 0.6) inset;
-                                        box-shadow: -11px -9px 5px -10px rgba(34, 60, 80, 0.6) inset;;"
+                                        box-shadow: -11px -9px 5px -10px rgba(34, 60, 80, 0.6) inset;"
+                                        href="index.php?page=addrent?property_id='.$row['property_id'].'"
                 >
                     <div style="width: 20%; border-radius: 10px; display: flex; justify-content: center; align-items: center">
                         <img src="'.$property_image.'" alt="No image" style="border-radius: 20px; width: 90%; height: 90%">

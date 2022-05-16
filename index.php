@@ -18,5 +18,8 @@
             case 'avatar':
                 require 'avatarSelector.php';
                 break;
+            case 'addrent':
+                require 'addrent.php';
+                break;
         }
     require "footer.php";
