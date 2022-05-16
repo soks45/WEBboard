@@ -52,7 +52,7 @@
                 if ($_SESSION['is_admin'] === 0) {
                     $sql = "SELECT * FROM property WHERE user_id=".$_SESSION['user_id'];
                 }
-                $result = $conn->query("SELECT * FROM property");
+                $result = $conn->query($sql);
                 while($row = $result->fetch())
                 {
                     echo '<option value="'.$row['property_id'].'">'.$row['name'].'</option>';
