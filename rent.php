@@ -49,9 +49,6 @@
             <select name="property_id" class="form-select">
                 <?php
                 $sql = "SELECT * FROM property";
-                if ($_SESSION['is_admin'] === 0) {
-                    $sql = "SELECT * FROM property WHERE user_id=".$_SESSION['user_id'];
-                }
                 $result = $conn->query($sql);
                 while($row = $result->fetch())
                 {
