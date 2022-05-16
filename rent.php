@@ -34,7 +34,7 @@
             <select name="user_id" class="form-select">
                 <?php
                 $sql = "SELECT * FROM user";
-                if ($_SESSION['is_admin' == 0]) {
+                if ($_SESSION['is_admin'] === 0) {
                     $sql = "SELECT * FROM user WHERE user_id=".$_SESSION['user_id'];
                 }
                 $result = $conn->query("SELECT * FROM user");
@@ -49,7 +49,7 @@
             <select name="property_id" class="form-select">
                 <?php
                 $sql = "SELECT * FROM property";
-                if ($_SESSION['is_admin' == 0]) {
+                if ($_SESSION['is_admin'] === 0) {
                     $sql = "SELECT * FROM property WHERE user_id=".$_SESSION['user_id'];
                 }
                 $result = $conn->query("SELECT * FROM property");

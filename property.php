@@ -13,7 +13,11 @@
         <th></th>
     </tr>
     <?php
-        $result = $conn->query("SELECT * FROM property JOIN user ON (property.user_id = user.user_id)");
+        $sql = "SELECT * FROM property JOIN user ON (property.user_id = user.user_id)";
+        if ($_SESSION['is_admin'] === 0) {
+            $sql = "SELECT * FROM property JOIN user ON (property.user_id = user.user_id) WHERE property.user_id=".$_SESSION['user_id'];
+        }
+        $result = $conn->query($sql);
         while($row = $result->fetch())
         {
             $arenda = $row['rent'] == 1 ? 'В аренде' : 'Не в аренде';
@@ -37,7 +41,7 @@
             <select name="user_id" class="form-select">
                 <?php
                 $sql = "SELECT * FROM user";
-                if ($_SESSION['is_admin' == 0]) {
+                if ($_SESSION['is_admin'] === 0) {
                     $sql = "SELECT * FROM user WHERE user_id=".$_SESSION['user_id'];
                 }
                 $result = $conn->query($sql);
