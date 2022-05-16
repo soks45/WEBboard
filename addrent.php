@@ -1,4 +1,5 @@
 <div style="width: 30%; margin: 5vh auto 0;">
+    <h1 style="text-align: center;">Арендовать</h1>
     <?php
         $sql = "SELECT * FROM property WHERE property_id=".$_GET['property_id'];
         $result = $conn->query($sql);
@@ -7,7 +8,6 @@
             echo '<img src="'.$row['path_p'].'" alt="No image" style="width: max-content; height: max-content; max-height: 300px; margin-left: 7vh">';
         }
     ?>
-    <h1 style="text-align: center;">Арендовать</h1>
     <form method="get" action="insertrent.php">
         <div class="mb-3">
             <select name="user_id" class="form-select" >
