@@ -12,7 +12,7 @@
         if ($property_image === '') {
             $property_image = 'https://avatars.mds.yandex.net/get-yablogs/38241/file_1556638122894/orig';
         }
-        echo '  <a href="index.php?page=addrent&property_id='.$row['property_id'].'&price='.$row['price'].'">
+        echo '  <a href="index.php?page=addrent&property_id='.$row['property_id'].'&price='.$row['price'].'" style="text-decoration: none; color: #666;">
                     <div style="width: 90%; background-color: blanchedalmond; margin: 2vh auto; border-radius: 30px; border: 1px solid black;
                                             display: flex; justify-content: space-between; padding: 25px 35px 25px 35px; align-items: flex-start; 
                                             -webkit-box-shadow: -11px -9px 5px -10px rgba(34, 60, 80, 0.6) inset;
